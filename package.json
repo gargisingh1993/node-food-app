@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name"         : "node-food-app",
   "version"      : "0.0.1",
@@ -13,7 +12,7 @@
     "method-override" : "~2.1.1"
   }
 }
-=======
+
 {
   "name"         : "node-food-app",
   "version"      : "0.0.1",
@@ -28,4 +27,3 @@
     "method-override" : "~2.1.1"
   }
 }
->>>>>>> origin/master
