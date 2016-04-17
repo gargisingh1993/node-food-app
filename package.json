@@ -1,10 +1,10 @@
 <<<<<<< HEAD
 {
-  "name"         : "node-todo",
+  "name"         : "node-food-app",
   "version"      : "0.0.1",
-  "description"  : "Simple todo application.",
+  "description"  : "Food ordering App",
   "main"         : "server.js",
-  "author"       : "Scotch",
+  "author"       : "Gargi Singh",
   "dependencies" : {
     "express"         : "~4.13.4",
     "mongoose"        : "~3.8.13",
@@ -15,11 +15,11 @@
 }
 =======
 {
-  "name"         : "node-todo",
+  "name"         : "node-food-app",
   "version"      : "0.0.1",
-  "description"  : "Simple todo application.",
+  "description"  : "food ordering App",
   "main"         : "server.js",
-  "author"       : "Scotch",
+  "author"       : "Gargi Singh",
   "dependencies" : {
     "express"         : "~4.13.4",
     "mongoose"        : "~3.8.13",
