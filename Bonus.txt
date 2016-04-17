@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+# Implemented an active food cart, for the current order, the data stays in the cart until it is
+either deleted/removed or the next order is created.
+
+# Reason for implementation- The Current order information must stay in the system, in order to complete
+=======
+# Implemented an active food cart, for the current order, the data stays in the cart until it is
+either deleted/removed or the next order is created.
+
+# Reason for implementation- The Current order information must stay in the system, in order to complete
+>>>>>>> origin/master
+the order in case, the order has to modified.

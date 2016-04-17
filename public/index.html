@@ -1,0 +1,88 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchfood">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Food App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; padding-bottom:50px;padding-left:50px;padding-right:50px;
+									background-image: url(myclick.jpg);
+									background-repeat: no-repeat;
+									background-attachment: fixed;
+									background-size : cover; 
+								}
+		#food-list 				{ margin-bottom:30px; text-align:center; }
+		#food-form 	 			{ margin-bottom:50px; text-align: center; }
+		.label-info				{background-color: #428bca;}
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src ="js/services/total.js"></script> <!-- service to calculate the total amount with tax-->
+	<script src="js/services/foods.js"></script> <!-- load our food service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND food COUNT -->
+		<div class="jumbotron text-center">
+			<h1>Food App - Get your orders fast</h1><span class="label label-info">{{ foods.length }}</span>
+		</div>
+
+		<!-- FOOD LIST -->
+		<div id="food-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+				
+				<h2><p class="label"> Item's Currently in the Cart</p> </h2>
+				<!-- LOOP OVER THE Orders(FOODS) IN $scope.foods -->
+				<div class="checkbox food-list" ng-repeat="food in foods">
+					<label><h4>
+					<input type="checkbox" ng-click="deletefood(food._id)"><p class ="label label-info"> {{ food.text }} {{food.Price}} </p>
+					</label>
+				</div>
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+
+			</div>
+		</div>
+		</div>
+
+		<!-- FORM TO CREATE FOODS -->
+		<div id="food-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="What is your desire my sire, i'll make it for you"ng-model="formData.text" autofocus=true ><br /><br />
+						<input type ="number" class="form-control input-lg text-center" placeholder="It's going to cost obviously" ng-model="formData.Price">
+					</div>
+
+					<!-- createfood() WILL CREATE NEW FOODS and Calculate the Total -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createfood()">Add</button><br /><br />
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createtotal()">TOTAL PRICE</button>
+					<button type ="submit" class="btn btn-primary btn-lg" ng-click="deleteall()">Next Order</button>
+				</form>
+			</div>
+			</div>
+			<div  id="totalvat" class="row text-center">
+			<h4><p class="label label-info text-center" ng-show="totalVAT">{{total}}</h4></p>
+			</div>
+	
+</body>
+</html>
